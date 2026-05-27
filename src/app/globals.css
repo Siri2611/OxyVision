@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F5F5;
+  --foreground: #424242;
+  --primary: #D32F2F; /* Warm Terracotta - lungs, urgency, medical */
+  --primary-light: #E57373; /* Lighter terracotta for hover */
+  --primary-foreground: #ffffff;
+  --secondary: #FFE0B2; /* Soft Beige - warmth, humanity */
+  --accent: #26A69A; /* Teal - breath, calm tech */
+  --muted: #E0E0E0; /* Light neutral */
+  --card: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Keep light look even in dark preference */
+    --background: #F5F5F5;
+    --foreground: #424242;
+    --primary: #D32F2F;
+    --primary-light: #E57373;
+    --primary-foreground: #ffffff;
+    --secondary: #FFE0B2;
+    --accent: #26A69A;
+    --muted: #E0E0E0;
+    --card: #ffffff;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #171717; /* neutral-900 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #404040; /* neutral-700 */
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #525252; /* neutral-600 */
+}
+
+/* Firefox scrollbar */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #404040 #171717;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
