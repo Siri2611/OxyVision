@@ -1,6 +1,7 @@
 'use client';
 
 import { useAuth } from '@/lib/contexts/AuthContext';
+import { supabase } from '@/lib/supabaseClient';
 import { useEffect, useState, useRef } from 'react';
 import { LoadingSpinner } from '@/components/ui/sidebar';
 import {
@@ -313,6 +314,20 @@ export default function AdminDetectionDashboard() {
             } 
           : p
       ));
+
+      // Save to Supabase DB
+      try {
+        await supabase.from('oxyvision_patients').insert([{
+          patient_id_label: currentPatient.name,
+          age: currentPatient.age,
+          sex: currentPatient.sex,
+          bmi: currentPatient.bmi,
+          status: outcome,
+          copd_probability: probability
+        }]);
+      } catch (dbError) {
+        console.error('Failed to save to Supabase:', dbError);
+      }
       
     } catch (error) {
       console.error('Prediction Error:', error);
