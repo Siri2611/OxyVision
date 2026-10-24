@@ -3,7 +3,21 @@
 **OxyVision** is a state-of-the-art, multi-modal machine learning system and digital stethoscope platform designed for real-time respiratory diagnosis. It acts as an early-intake monitoring system that analyzes live pulmonary audio directly from edge hardware (ESP32/INMP441) or clinical dataset files to diagnose **Chronic Obstructive Pulmonary Disease (COPD)**.
 
 ---
-CPSS Group Project
+### 👨‍🏫 Project Supervisor
+
+**Dr. Surjit Singh**
+Department of Computer Science & Engineering
+Thapar Institute of Engineering & Technology
+Email: **[surjit.singh@thapar.edu](mailto:surjit.singh@thapar.edu)**
+____
+## 👥 Team Details
+
+### Project Team
+
+| S. No. | Team Member        | Role / Responsibility                              |
+| -----: | ------------------ | -------------------------------------------------- |
+|      1 |                    |                    |
+
 
 ## 🚀 Key Features
 - **Pure Acoustic CNN Architecture:** Flawless detection of wheezes, crackles, and blockages with 99%+ accuracy by isolating spectral frequencies on an acoustic-only Deep Learning branch.
